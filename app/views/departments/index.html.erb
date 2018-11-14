@@ -1,0 +1,6 @@
+<h1>My Super Wannabe Target Store</h1>
+<hr/>
+
+<% @departments.each do |department| %>
+<%= link_to department.name, department_items_path(department) %>
+<% end %>
