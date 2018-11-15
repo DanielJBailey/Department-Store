@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: lightgray;
+    background-color: white;
 
     .navigation {
         position: fixed;
@@ -50,6 +50,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding-top: 50px;
 
         .department {
             height: auto;

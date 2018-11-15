@@ -1,4 +1,37 @@
-    <%= link_to "Create Item", new_department_item_path(@department) %>
+<% 
+@colors = {
+    electronics: "#ff7f50",
+    home: "#70a1ff",
+    groceries: "#7bed9f",
+    clothing: "#ff4757"
+}
+%>  
 
-    <%= @items.each do |item| %>
+
+<div class="item-container" 
+    <% if @department.name == "Clothing" %>
+        style="background-color: #ff4757"
+    <% elsif @department.name == "Electronics"%>
+        style="background-color: #ff7f50"
+    <% elsif @department.name == "Home"%>
+        style="background-color: #70a1ff"
+    <% else %>
+        style="background-color: #7bed9f"
+    <% end %>>
+    <p class="new-item-link"><%= link_to "Create Item", new_department_item_path(@department) %></p>
+
+    
+    <% @items.each do |item| %>
+    <div class="item">
+    <img src="https://via.placeholder.com/300x200"/>
+        <div class="item-info">
+            <h2><%= item.name %></h2>
+            <hr />
+            <p class="price">$<%= item.price %></p>
+            <hr />
+            <p class="description"><%= item.description %></p>
+        </div>
+    </div>
     <% end %>
+
+</div>
