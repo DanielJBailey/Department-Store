@@ -1,6 +1,12 @@
-<h1>My Super Wannabe Target Store</h1>
-<hr/>
-
-<% @departments.each do |department| %>
-<%= link_to department.name, department_items_path(department) %>
-<% end %>
+<div class="department-container">
+    <% @departments.each do |department| %>
+        
+        <div class="department <%= department.name.downcase %>">
+            <h1><%= department.name %></h1>
+            <%= link_to department_items_path(department), class: "link", :show => 'go' do %>
+                <button class="shop-button">Shop Now</button>
+            <% end %>
+        </div>
+        
+    <% end %>
+</div>

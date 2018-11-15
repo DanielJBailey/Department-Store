@@ -1,0 +1,14 @@
+<h1><%= @item.id ? 'Edit Item' : 'Create Item' %></h1>
+<hr />
+<%= form_for [@department, @item] do |f| %>
+  <%= f.text_field :name, required: true, placeholder: "Item Name:" %>
+  <br />
+  <%= f.text_field :price, required: true, placeholder: "Item Price:"  %>
+  <br />
+  <%= f.text_area :description, required: true, placeholder: "Item Description:"  %>
+   <br />
+  <%= f.submit %>
+<% end %>
+
+
+
